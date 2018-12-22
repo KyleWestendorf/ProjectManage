@@ -1,28 +1,50 @@
-﻿@model DatabaseClass.Project
-@using DatabaseClass
+﻿@model ProjectManageDAL.Project
+@using ProjectManageDAL
 @{
     /**/
 
-    ViewBag.Title = "Index";
+    ViewBag.Title = "New Project";
 
-    
+
 
     var products = new[]
     {
         new { Name = "AutoStore", Text = "AutoStore"},
-         new { Name = "ShareScan",  Text = "ShareScan"},
-          new { Name = "Equitrac", Text = "Equitrac"},
+        new { Name = "ShareScan",  Text = "ShareScan"},
+        new { Name = "Equitrac", Text = "Equitrac"},
     };
 
     var productListItems = new SelectList(products, "Name", "Text");
-   
 
 }
 
-<h2>Index</h2>
+
+<h2>Find Project</h2>
+@using (Html.BeginForm("FindProject", "Home"))
+{
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.SalesOrder, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.SalesOrder, "", new { @class = "form-control" })
+    </div>*@
+
+    <div class="form-group">
+        @Html.Label("salesOrder", new { @class = "control-label"})
+        @Html.TextBox("salesOrder")
+    </div>
+    <button type="submit" class="btn btn-success btn-lg margin-right">
+        <span class="glyphicon glyphicon-save"></span> Search
+    </button>
+}
+
+
+<h2>Add New Project</h2>
 
 @using (Html.BeginForm())
 {
+    <div class="form-group">
+        @Html.LabelFor(m => m.SalesOrder, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.SalesOrder, new { @class = "form-control" })
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Reseller, new { @class = "control-label" })
         @Html.TextBoxFor(m => m.Reseller, new { @class = "form-control" })
@@ -34,6 +56,10 @@
     <div class="form-group">
         @Html.LabelFor(m => m.Product, new { @class = "control-label" })
         @Html.DropDownListFor(m => m.Product, productListItems, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description, new { @class = "control-label" })
+        @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
     </div>
     <button type="submit" class="btn btn-success btn-lg margin-right">
         <span class="glyphicon glyphicon-save"></span> Save

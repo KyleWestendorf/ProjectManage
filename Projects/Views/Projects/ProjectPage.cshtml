@@ -1,14 +1,15 @@
-﻿@model DatabaseClass.Project
+﻿@model ProjectManageDAL.Project
 
 @{
     ViewBag.Title = "ProjectPage";
 }
 
-<h2>ProjectPage</h2>
+<h2>Project Page for SO#: @Model.SalesOrder</h2>
 
-<h3>Project ID: @Model.ProjectId</h3>
+
 <h3>Reseller: @Model.Reseller</h3>
 <h3>Customer: @Model.Customer</h3>
 <h3>Product: @Model.Product</h3>
-
+<p>Description: @Model.Description</p>
+@Html.ActionLink("Edit", "Edit", Model)
 @Html.ActionLink("Home", "Index")

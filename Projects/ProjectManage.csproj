@@ -108,11 +108,12 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Home\ProjectPage.cshtml" />
+    <Content Include="Views\Projects\ProjectPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -130,6 +131,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Projects\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -140,11 +142,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Project\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DatabaseClass\DatabaseClass.csproj">
+    <ProjectReference Include="..\DatabaseClass\ProjectManageDAL.csproj">
       <Project>{1c370212-edab-474f-9423-8a6301baeee2}</Project>
-      <Name>DatabaseClass</Name>
+      <Name>ProjectManageDAL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

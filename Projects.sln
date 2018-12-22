@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects", "Projects\Projects.csproj", "{501E9D49-493E-47AA-B4D8-734FA88EF5FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManage", "Projects\ProjectManage.csproj", "{501E9D49-493E-47AA-B4D8-734FA88EF5FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseClass", "DatabaseClass\DatabaseClass.csproj", "{1C370212-EDAB-474F-9423-8A6301BAEEE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectManageDAL", "DatabaseClass\ProjectManageDAL.csproj", "{1C370212-EDAB-474F-9423-8A6301BAEEE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

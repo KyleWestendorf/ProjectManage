@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DatabaseClass;
+using ProjectManageDAL;
 namespace Projects.Controllers
 {
     public class HomeController : Controller
@@ -18,9 +18,20 @@ namespace Projects.Controllers
         public ActionResult Index(Project project)
         {
 
-            DatabaseClass.ProjectRepository.AddProject(project.Reseller, project.Customer, project.Product);
+            ProjectManageDAL.ProjectRepository.Add_Project(project.Reseller, project.Customer, project.Product, project.SalesOrder, project.Description);
 
-            return View("ProjectPage", project);
+            return View("../Projects/ProjectPage", project);
+        }
+
+        [HttpPost]
+        public ActionResult FindProject(int salesOrder)
+        {
+            Console.WriteLine(salesOrder);
+            var returnedProject = ProjectManageDAL.ProjectRepository.Get_Project_By_Sales_Order_Number(salesOrder);
+            Console.WriteLine(returnedProject.Description);
+            
+
+            return RedirectToAction("Index", "Projects", returnedProject);
         }
     }
 }
