@@ -1,0 +1,42 @@
+﻿@model DatabaseClass.Project
+@using DatabaseClass
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+
+    
+
+    var products = new[]
+    {
+        new { Name = "AutoStore", Text = "AutoStore"},
+         new { Name = "ShareScan",  Text = "ShareScan"},
+          new { Name = "Equitrac", Text = "Equitrac"},
+    };
+
+    var productListItems = new SelectList(products, "Name", "Text");
+   
+
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Reseller, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Reseller, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Customer, new { @class = "control-label" })
+        @Html.TextBoxFor(m => m.Customer, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Product, new { @class = "control-label" })
+        @Html.DropDownListFor(m => m.Product, productListItems, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success btn-lg margin-right">
+        <span class="glyphicon glyphicon-save"></span> Save
+    </button>
+}
+

@@ -1,0 +1,14 @@
+﻿@model DatabaseClass.Project
+
+@{
+    ViewBag.Title = "ProjectPage";
+}
+
+<h2>ProjectPage</h2>
+
+<h3>Project ID: @Model.ProjectId</h3>
+<h3>Reseller: @Model.Reseller</h3>
+<h3>Customer: @Model.Customer</h3>
+<h3>Product: @Model.Product</h3>
+
+@Html.ActionLink("Home", "Index")
